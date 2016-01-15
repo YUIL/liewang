@@ -1,0 +1,10 @@
+{application,liewang,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{liewang_app,[]}},
+              {env,[]},
+              {modules,[building_func,building_server,liewang_app,liewang_sup,
+                        net_socket,player_func,player_logic,player_server,
+                        test,upgrade_building]}]}.

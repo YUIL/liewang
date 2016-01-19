@@ -4,19 +4,16 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created : 15. 一月 2016 17:22
+%%% Created : 18. 一月 2016 10:23
 %%%-------------------------------------------------------------------
--module(building_func).
+-module(lib_misc).
 -author("i008").
 
--include("./building.hrl").
 %% API
--export([]).
--compile(export_all).
+-export([delay_call/3]).
 
-add(Table,N)->
-  ets:insert(Table,{N,#building{id =N}}).
-
-upgrade(Table,Id)->
-  timer:apply_after()
-
+delay_call(Name,Request,Time)->
+  receive
+  after Time->
+    gen_server:call(Name,Request)
+  end.

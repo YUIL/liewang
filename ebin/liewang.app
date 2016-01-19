@@ -5,6 +5,6 @@
               {applications,[kernel,stdlib]},
               {mod,{liewang_app,[]}},
               {env,[]},
-              {modules,[building_func,building_server,liewang_app,liewang_sup,
+              {modules,[building_server,lib_misc,liewang_app,liewang_sup,
                         net_socket,player_func,player_logic,player_server,
                         test,upgrade_building]}]}.

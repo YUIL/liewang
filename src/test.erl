@@ -30,6 +30,9 @@ rpc(Pid,Function,Args)->
       Error
   end.
 
+test(2)->
+  file:consult("../data/building.dat").
+
 
 start() ->
   Players = dict:new(),

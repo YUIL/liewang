@@ -1,5 +1,6 @@
 -record(player,{
   id,
-  level=0,
+  level=1,
+  buildings,
   name=""
 }).

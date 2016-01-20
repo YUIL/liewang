@@ -27,19 +27,49 @@
 	5, %max_level
 	[	%each level
 		{%level 1
-			5000 %upgrade_time
+			1000, %upgrade_time
+			10 %exp_award
 		},
 		{%level 2
-			10000 %upgrade_time
+			2000, %upgrade_time
+			10 %exp_award
 		},
 		{%level 3
-			15000 %upgrade_time
+			5000, %upgrade_time
+			10 %exp_award
 		},
 		{%level 4
-			20000 %upgrade_time
+			10000, %upgrade_time
+			10 %exp_award
 		},
 		{%level 5
-			25000 %upgrade_time
+			15000, %upgrade_time
+			10 %exp_award
+		}
+	]
+}.
+{%t_id 3
+	5, %max_level
+	[	%each level
+		{%level 1
+			15000, %upgrade_time
+			10 %exp_award
+		},
+		{%level 2
+			20000, %upgrade_time
+			10 %exp_award
+		},
+		{%level 3
+			35000, %upgrade_time
+			10 %exp_award
+		},
+		{%level 4
+			40000, %upgrade_time
+			10 %exp_award
+		},
+		{%level 5
+			50000, %upgrade_time
+			10 %exp_award
 		}
 	]
 }.

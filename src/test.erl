@@ -9,7 +9,7 @@
 -module(test).
 -author("i008").
 
--include("./player.hrl").
+-include("./role.hrl").
 %% API
 -export([]).
 -compile(export_all).
@@ -17,10 +17,10 @@
 
 test()->
   D1=dict:new(),
-  D2= dict:store(1,#player{level=1},D1),
+  D2= dict:store(1,#role{level=1},D1),
   R=dict:find(1,D2),
   io:format("1   ~p~n",[R]),
-  io:format("2   ~p~n",[R#player.level]).
+  io:format("2   ~p~n",[R#role.level]).
 rpc(Pid,Function,Args)->
   Pid!{self(),{Function,Args}},
   receive
@@ -44,7 +44,7 @@ loop(Players) ->
       Player = dict:find(Id,Players),
       case Player of
         error ->
-          NewPlayers= dict:store(Id, #player{id=Id}, Players),
+          NewPlayers= dict:store(Id, #role{role_id=Id}, Players),
           From!{ok,add_success},
          loop(NewPlayers);
         _ ->
@@ -62,7 +62,7 @@ loop(Players) ->
 
     {From, {get_level, Id}} ->
       {ok,Player} = dict:find(Id, Players),
-      From ! {ok,{level,Player#player.level}},
+      From ! {ok,{level,Player#role.level}},
       loop(Players);
     {From,_}->
       From!{error,no_function},

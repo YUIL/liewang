@@ -1,0 +1,25 @@
+{
+	5, %max_level
+	[	%each level
+		{%level 1
+			0, %exp
+			[3,4,5] %max num of each building
+		},
+		{%level 2
+			20, %exp
+			[4,4,5] %max num of each building
+		},
+		{%level 3
+			50, %exp
+			[5,5,5] %max num of each building
+		},
+		{%level 4
+			80, %exp
+			[5,7,6] %max num of each building
+		},
+		{%level 5
+			120, %exp
+			[7,7,7] %max num of each building
+		}
+	]
+}.

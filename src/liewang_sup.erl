@@ -23,18 +23,7 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-  {ok, Player_parm} = file:consult(("../data/player.parm")),
-  {ok, Building_parm} = file:consult("../data/building.parm"),
-  Parameters =
-    dict:store(
-      player_parm,
-      Player_parm,
-      dict:store(
-        building_parm,
-        Building_parm,
-        dict:new()
-      )
-    ),
+  Parameters=lib_parameter:load("../data/"),
 
   {ok, {{one_for_one, 5, 10},
     [{tag1, {building_server, start_link, [Parameters]},
@@ -42,10 +31,10 @@ init([]) ->
       10000,
       worker,
       [building_server]},
-      {tag2, {player_server, start_link, [Parameters]},
+      {tag2, {role_server, start_link, [Parameters]},
         permanent,
         10000,
         worker,
-        [player_server]}
+        [role_server]}
     ]}}.
 

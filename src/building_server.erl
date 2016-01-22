@@ -9,6 +9,7 @@
 -module(building_server).
 -author("i008").
 
+-include("../data/role_parm.hrl").
 -include("./building.hrl").
 -include("./role.hrl").
 -behavior(gen_server).
@@ -17,18 +18,26 @@
 -compile(export_all).
 %%阿斯顿
 
+start(Servers)->
+  Parameters=dict:store(servers,Servers,lib_parameter:load("../data/")),
+  {ok,SelfName}=dict:find(building_server,Servers),
+  gen_server:start_link({local,SelfName}, ?MODULE, [Parameters], []).
 
 start_link(Parameters) ->
   gen_server:start_link({local, ?MODULE}, ?MODULE, [Parameters], []).
 
 init([Parameters]) ->
-  State = {1, ets:new(buiding_table, [set, public, named_table]), Parameters},
+  {ok,Servers}=dict:find(servers,Parameters),
+  {ok,SelfName}=dict:find(building_server,Servers),
+  State = {1, ets:new(SelfName, [set, public, named_table]), Parameters},
   {ok, State}.
 
 
 handle_call({add, Role_id, T_id}, _From, {N, Table, Parameters}) ->
   {ok, [{_MaxLevel, Each_level_parm}]} = dict:find(role, Parameters),
-  {ok, Role} = gen_server:call(role_server, {get, Role_id}),
+  {ok,Servers}=dict:find(servers,Parameters),
+  {ok,RoleServerName}=dict:find(role_server,Servers),
+  {ok, Role} = gen_server:call(RoleServerName, {get, Role_id}),
   {_Update_time, Max_nums} = lists:nth(Role#role.level, Each_level_parm),
   Max_num = lists:nth(T_id, Max_nums),
   io:format("building:~p ,Max:~p~n", [building_num(Table, Role_id, T_id), Max_num]),
@@ -55,9 +64,11 @@ handle_call({upgrade, Id}, _From, {N, Table, Parameters}) ->
         {error, is_upgrading};
       false ->
         {Time, _ExpAward} = lists:nth(Building#building.level, Each_level_Parm),
-        timer:apply_after(Time, ?MODULE, call_upgrade_immediately, [Id]),
+        {ok,Servers}=dict:find(servers,Parameters),
+        {ok,ServerName}=dict:find(building_server,Servers),
+        timer:apply_after(Time, ?MODULE, call_upgrade_immediately, [Id,ServerName]),
         io:format("~pms to complete the upgrade!~n", [Time]),
-        {ok, upgrading}
+        {ok, Time}
     end;
     true ->
       Reply = {error, reached_maximum}
@@ -71,10 +82,12 @@ handle_call({upgrade_immediately, Id}, _From, {N, Table, Parameters}) ->
   io:format("upgrade complete!~p->~p~n", [Building, UpdateBuilding]),
 
   %%奖励经验
+  {ok,Servers}=dict:find(servers,Parameters),
+  {ok,RoleServerName}=dict:find(role_server,Servers),
   {ok, Building_parm} = dict:find(building, Parameters),
   {_MaxLevel, Each_level_Parm} = lists:nth(Building#building.t_id, Building_parm),
   {_Upgrade_time,Exp_award}=lists:nth(New_level,Each_level_Parm),
-  gen_server:call(role_server,{add_exp,Building#building.role_id,Exp_award}),
+  gen_server:call(RoleServerName,{add_exp,Building#building.role_id,Exp_award}),
 
   Reply = {ok, UpdateBuilding},
   {reply, Reply, {N, Table, Parameters}};
@@ -85,8 +98,10 @@ handle_call({get_building_num, Role_id, T_id}, _From, {N, Table, Parameters}) ->
 
 handle_call(test, _From, {N, Table, Parameters}) ->
   io:format("test~n"),
-  {ok, X} = dict:find(role_parm, Parameters),
-  io:format("~p~n", [X]),
+  {ok, [Role_parm]} = dict:find(role, Parameters),
+  Role_level=lists:nth(1,Role_parm#role_parm.each_level),
+  Exp=Role_level#role_level.exp,
+  io:format("Exp:~p~n",[Exp]),
 
   {reply, ok, {N, Table, Parameters}};
 handle_call({test2, Arg}, _From, {N, Table, Parameters}) ->
@@ -113,8 +128,8 @@ building_num(Table, Role_id, T_id) ->
   length(
     ets:match(Table, {'_', #building{id = '_', role_id = Role_id, t_id = T_id, level = '_', is_upgrading = '_'}})
   ).
-call_upgrade_immediately(Id) ->
-  gen_server:call(?MODULE, {upgrade_immediately, Id}).
+call_upgrade_immediately(Id,BuildingServerName) ->
+  gen_server:call(BuildingServerName, {upgrade_immediately, Id}).
 
 
 

@@ -14,6 +14,8 @@
 -export([]).
 -compile(export_all).
 
+test1(X)->
+  X+1.
 
 test()->
   D1=dict:new(),

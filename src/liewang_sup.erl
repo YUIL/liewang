@@ -24,7 +24,7 @@ start_link() ->
 
 init([]) ->
   Parameters=lib_parameter:load("../data/"),
-
+  liewang:start(),
   {ok, {{one_for_one, 5, 10},
     [{tag1, {building_server, start_link, [Parameters]},
       permanent,

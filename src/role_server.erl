@@ -15,15 +15,19 @@
 -export([]).
 -compile(export_all).
 
-
+start(Servers)->
+  Parameters=dict:store(servers,Servers,lib_parameter:load("../data/")),
+  {ok,SelfName}=dict:find(role_server,Servers),
+  gen_server:start_link({local,SelfName}, ?MODULE, [Parameters], []).
 
 start_link(Parameters) ->
   gen_server:start_link({local, ?MODULE}, ?MODULE, [Parameters], []).
 
 init([Parameters]) ->
-  State = {1, ets:new(role_table, [set, protected, named_table]), Parameters},
+  {ok,Servers}=dict:find(servers,Parameters),
+  {ok,SelfName}=dict:find(role_server,Servers),
+  State = {1, ets:new(SelfName, [set, protected, named_table]), Parameters},
   {ok, State}.
-
 
 
 handle_call(add, From, {N, Table, Parameters}) ->
@@ -32,6 +36,7 @@ handle_call(add, From, {N, Table, Parameters}) ->
   {reply, Reply, {N + 1, Table, Parameters}};
 handle_call({get, Id}, From, {N, Table, Parameters}) ->
   [{_, Role} | _] = ets:lookup(Table, Id),
+%%  io:format("role:~p~n",[Role]),
   Reply = {ok, Role},
   {reply, Reply, {N, Table, Parameters}};
 handle_call({add_exp, Id, Exp}, From, {N, Table, Parameters}) ->

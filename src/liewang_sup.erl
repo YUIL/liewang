@@ -23,18 +23,12 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-  Parameters=lib_parameter:load("../data/"),
-  liewang:start(),
+  server_socket:start(),
   {ok, {{one_for_one, 5, 10},
-    [{tag1, {building_server, start_link, [Parameters]},
+    [{tag1, {main_server, start_link, []},
       permanent,
       10000,
       worker,
-      [building_server]},
-      {tag2, {role_server, start_link, [Parameters]},
-        permanent,
-        10000,
-        worker,
-        [role_server]}
+      [main_server]}
     ]}}.
 

@@ -1,21 +1,19 @@
 %%%-------------------------------------------------------------------
-%%% @author i008
+%%% @author yuil
 %%% @copyright (C) 2016, <COMPANY>
 %%% @doc
 %%%
 %%% @end
-%%% Created : 15. 一月 2016 16:22
+%%% Created : 23. 一月 2016 13:25
 %%%-------------------------------------------------------------------
--module(liewang).
--author("i008").
-
+-module(client).
+-author("yuil").
 -define(TCP_PARMS, [{active, false}, {packet, 2}, binary]).
+
 
 %% API
 -export([]).
 -compile(export_all).
-
-
 %%Client
 -spec connect() -> {ok, Socket} when Socket :: gen_tcp:socket().
 connect() ->
@@ -46,10 +44,3 @@ send(Socket, Message) ->
 %% {building_server,{add,RoleId,BuildingTypeId} ->{ok,BuildingId}|{error, reached_maximum}
 %% {building_server,{get,BuildingId}            ->{ok,#building} |{ok,Other}
 %% {building_server,{upgrade,BuildingId}        ->{ok,UpgradeTime}|{error, is_upgrading}|{error, reached_max_level}
-
-
-
-start()->
-  application:start(liewang).
-stop()->
-  gen_server:stop(main_server).

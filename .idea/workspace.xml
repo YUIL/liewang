@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ee6e638-77be-4402-898a-fbdcc8ef5302" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/liewang.erl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/net_socket.beam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/player.hrl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/player_func.beam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/player_logic.beam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/player_server.beam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ebin/upgrade_building.beam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/net_socket.erl" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client.erl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main_server.erl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server_socket.erl" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ttt.txt" afterPath="$PROJECT_DIR$/src/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.rebar/erlcinfo" afterPath="$PROJECT_DIR$/.rebar/erlcinfo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebin/building_server.beam" afterPath="$PROJECT_DIR$/ebin/building_server.beam" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebin/liewang_app.beam" afterPath="$PROJECT_DIR$/ebin/liewang_app.beam" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebin/liewang_sup.beam" afterPath="$PROJECT_DIR$/ebin/liewang_sup.beam" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebin/test.beam" afterPath="$PROJECT_DIR$/ebin/test.beam" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rebar.xml" afterPath="$PROJECT_DIR$/.idea/rebar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/role_parm.hrl" afterPath="$PROJECT_DIR$/data/role_parm.hrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebin/liewang.app" afterPath="$PROJECT_DIR$/ebin/liewang.app" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/building_server.erl" afterPath="$PROJECT_DIR$/src/building_server.erl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liewang.erl" afterPath="$PROJECT_DIR$/src/liewang.erl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liewang_app.erl" afterPath="$PROJECT_DIR$/src/liewang_app.erl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liewang_sup.erl" afterPath="$PROJECT_DIR$/src/liewang_sup.erl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/role_server.erl" afterPath="$PROJECT_DIR$/src/role_server.erl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.erl" afterPath="$PROJECT_DIR$/src/test.erl" />
     </list>
     <ignored path="liewang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,21 +39,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="building_server.erl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/building_server.erl">
+      <file leaf-file-name="building.hrl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/building.hrl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2543689">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="role_server.erl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/role_server.erl">
+      <file leaf-file-name="gen_server.erl" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files/erl7.2.1/lib/stdlib-2.7/src/gen_server.erl">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="76" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="628" column="0" selection-start-line="628" selection-start-column="0" selection-end-line="628" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,7 +63,77 @@
         <entry file="file://$PROJECT_DIR$/src/liewang.erl">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <caret line="11" column="59" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.erl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server_socket.erl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server_socket.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liewang_app.erl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/liewang_app.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="role_server.erl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/role_server.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_server.erl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main_server.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="building_server.erl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/building_server.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42006803">
+              <caret line="55" column="70" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -99,29 +167,35 @@
         <option value="$PROJECT_DIR$/src/player_func.erl" />
         <option value="$PROJECT_DIR$/src/player.hrl" />
         <option value="$PROJECT_DIR$/src/building_func.erl" />
-        <option value="$PROJECT_DIR$/src/player_server.erl" />
         <option value="$PROJECT_DIR$/src/building.hrl" />
         <option value="$PROJECT_DIR$/src/role.hrl" />
         <option value="$PROJECT_DIR$/data/role_parm.hrl" />
         <option value="$PROJECT_DIR$/src/lib_parameter.erl" />
         <option value="$PROJECT_DIR$/data/building.parm" />
         <option value="$PROJECT_DIR$/data/role.parm" />
-        <option value="$PROJECT_DIR$/src/liewang_sup.erl" />
         <option value="$PROJECT_DIR$/src/test.erl" />
         <option value="$PROJECT_DIR$/src/lib_tcp.erl" />
         <option value="$PROJECT_DIR$/src/net_socket.erl" />
         <option value="$PROJECT_DIR$/src/game.erl" />
+        <option value="$PROJECT_DIR$/src/player_server.erl" />
         <option value="$PROJECT_DIR$/src/role_server.erl" />
-        <option value="$PROJECT_DIR$/src/building_server.erl" />
+        <option value="$PROJECT_DIR$/src/liewang_app.erl" />
+        <option value="$PROJECT_DIR$/src/login_server.erl" />
+        <option value="$PROJECT_DIR$/src/liewang_sup.erl" />
+        <option value="$PROJECT_DIR$/src/server_socket.erl" />
+        <option value="$PROJECT_DIR$/src/main_server.erl" />
         <option value="$PROJECT_DIR$/src/liewang.erl" />
+        <option value="$PROJECT_DIR$/src/README.md" />
+        <option value="$PROJECT_DIR$/src/client.erl" />
+        <option value="$PROJECT_DIR$/src/building_server.erl" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="25" />
-    <option name="y" value="56" />
-    <option name="width" value="1140" />
-    <option name="height" value="894" />
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -148,9 +222,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,13 +241,56 @@
               <option name="myItemId" value="liewang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ebin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liewang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="Erlang External Tools" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -198,12 +314,12 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\erl\WorkSpace\liewang\ebin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\erl\WorkSpace\liewang\data" />
       <recent name="D:\erl\WorkSpace\liewang\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\erl\WorkSpace\liewang\ebin" />
     </key>
   </component>
   <component name="RunManager" selected="Erlang Rebar.compile">
@@ -449,6 +565,36 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -505,6 +651,21 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="console" type="ErlangConsoleRunConfigurationType" factoryName="Erlang Console" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="consoleArgs" value="" />
       <option name="workingDirPath" value="$PROJECT_DIR$/ebin" />
@@ -521,6 +682,11 @@
       <item index="0" class="java.lang.String" itemvalue="Erlang Console.console" />
       <item index="1" class="java.lang.String" itemvalue="Erlang Rebar.compile" />
     </list>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -561,7 +727,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="56" width="1140" height="894" extended-state="0" />
+    <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -570,10 +736,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3037037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30700636" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30674157" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33896798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21098267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -633,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,13 +829,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/timer.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="58" selection-start-line="156" selection-start-column="58" selection-end-line="156" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -730,13 +888,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/timer.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -835,55 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/erts-6.1/src/erlang.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3654321">
-          <caret line="1065" column="0" selection-start-line="1065" selection-start-column="0" selection-end-line="1065" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/timer.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.466666">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/liewang_app.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/supervisor.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/role.hrl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/building.hrl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/proc_lib.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/role_parm.hrl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16838996">
@@ -892,19 +994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/kernel-3.0.1/src/gen_tcp.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.536189">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib_misc.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50516987">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25849336">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4513888">
           <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +1026,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22524272">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/role.hrl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/erl7.2.1/lib/stdlib-2.7/src/supervisor.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="342" column="0" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/erl7.2.1/lib/kernel-4.1.1/src/gen_tcp.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="6" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/erl7.2.1/lib/erts-7.2.1/src/erlang.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1785" column="0" selection-start-line="1785" selection-start-column="0" selection-end-line="1785" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/erl7.2.1/lib/stdlib-2.7/src/proc_lib.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -943,31 +1071,47 @@
     <entry file="file://$PROJECT_DIR$/src/liewang_sup.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="25" selection-end-column="44" />
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/gen_server.erl">
+    <entry file="file://$PROJECT_DIR$/src/server_socket.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/dict.erl">
+    <entry file="file://C:/Program Files/erl7.2.1/lib/stdlib-2.7/src/ets.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33203885">
-          <caret line="388" column="0" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/erl6.1/lib/stdlib-2.1/src/gen.erl">
+    <entry file="file://$PROJECT_DIR$/src/liewang_app.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9961165">
-          <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main_server.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -975,7 +1119,23 @@
     <entry file="file://$PROJECT_DIR$/src/liewang.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/erl7.2.1/lib/stdlib-2.7/src/gen_server.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="628" column="0" selection-start-line="628" selection-start-column="0" selection-end-line="628" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -983,15 +1143,23 @@
     <entry file="file://$PROJECT_DIR$/src/role_server.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="76" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/building.hrl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/building_server.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2543689">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.42006803">
+          <caret line="55" column="70" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
           <folding />
         </state>
       </provider>
